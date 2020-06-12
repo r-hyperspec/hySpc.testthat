@@ -1,0 +1,19 @@
+language: R
+sudo: false
+cache: packages
+warnings_are_errors: false
+
+os:
+  - linux
+  - osx
+
+r:
+  - oldrel
+  - release
+  - devel
+
+before-script:
+- R -e "install.packages (c ('roxygen2', 'dbplyr')); roxygen2::roxygenize ('.')"
+
+after-success:
+- Rscript -e "covr::codecov()"
