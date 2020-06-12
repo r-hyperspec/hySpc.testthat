@@ -6,3 +6,4 @@ appveyor\.yml
 \.github
 hyperSpec.skeleton.labels.json
 docs
+^\.Rproj\.user$

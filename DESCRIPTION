@@ -11,9 +11,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
-Imports: 
-    testthat,
-    methods
+Depends: 
+    testthat
 RoxygenNote: 7.1.0
 Roxygen: list(markdown = TRUE)
 Collate: 
