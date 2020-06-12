@@ -4,7 +4,7 @@ This package provides some addons for testthat used by **hyperSpec** and **hySpc
 
 Most importantly, it allows to attach unit tests to  functions:
 
-```
+```{r}
 .test(f) <- function(){
   context("testing f")
   
