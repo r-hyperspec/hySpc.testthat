@@ -5,7 +5,7 @@ Version: 0.1.0
 Maintainer: Claudia Beleites <Claudia.Beleites@chemometrix.gmbh>
 Authors@R: c(
     person("Claudia",   "Beleites",  role = c("aut","cre"), email = "Claudia.Beleites@chemometrix.gmbh"),
-    person("Erick",   "Oduniyi", email = "eeoduniyi@gmail.com"))
+    person("Erick",     "Oduniyi",   role = "aut",          email = "eeoduniyi@gmail.com"))
 Description: support functions for plotting.
 License: MIT + file LICENSE
 Encoding: UTF-8
