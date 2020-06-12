@@ -15,7 +15,7 @@
 ##' @importFrom  testthat with_reporter
 ##' @importFrom  testthat get_reporter
 ##' @export
-hyperSpec.skeleton.unittest <- function (){
+hySpc.testthat.unittest <- function (){
   if (!requireNamespace("testthat", quietly=TRUE)) {
     warning("Package testthat required to run the unit tests.")
     return(NA)
@@ -23,7 +23,7 @@ hyperSpec.skeleton.unittest <- function (){
   if (! "package:testthat" %in% search ())
     attachNamespace("testthat")
 
-  tests <- eapply(env = getNamespace ("hyperSpec.skeleton"), FUN = get.test, all.names=TRUE)
+  tests <- eapply(env = getNamespace ("hySpc.testthat"), FUN = get.test, all.names=TRUE)
   tests <- tests [! sapply (tests, is.null)]
 
   reporter <- SummaryReporter$new()

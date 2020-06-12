@@ -1,6 +1,6 @@
 # C. Beleites
 # get all tests attached to objects
-tests <- eapply(env=getNamespace ("hyperSpec.skeleton"), FUN=get.test, all.names=TRUE)
+tests <- eapply(env=getNamespace ("hySpc.testthat"), FUN=get.test, all.names=TRUE)
 tests <- tests [! sapply (tests, is.null)]
 
 for (t in seq_along (tests))
