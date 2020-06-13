@@ -36,6 +36,12 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
           remotes::install_dev("pkgdown")
         shell: Rscript {0}
+        
+      - name: Roxygenize        
+        run: |
+          install.packages(c("devtools", "roxygen2"))
+          devtools::document(roclets = c('rd', 'collate', 'namespace', 'vignette'))
+        shell: Rscript {0}
 
       - name: Install package
         run: R CMD INSTALL .
