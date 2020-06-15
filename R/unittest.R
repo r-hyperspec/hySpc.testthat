@@ -42,14 +42,14 @@ unittest <- function(ns, standalone = TRUE, reporter = "progress") {
 
 }
 
-.test(unittest) <- function() {
+test(unittest) <- function() {
   context("unittest")
 
   test_that("standalone", {
 
     f <- function(x) x^2
 
-    .test(f) <- function() {
+    test(f) <- function() {
       context("f")
       test_that("correct result for complex number", {
         expect_equal(f(1i), -1 + 0i)

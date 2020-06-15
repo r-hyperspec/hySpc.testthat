@@ -12,7 +12,7 @@
 ##'
 ##' f <- function(x) x^2
 ##'
-##' .test(f) <- function() {
+##' test(f) <- function() {
 ##'    context("f")
 ##'
 ##'    test_that("correct result for complex number", {
@@ -26,13 +26,13 @@ test_fun <- function(object, reporter = "minimal") {
   with_reporter(reporter = reporter, test())
 }
 
-.test(`test_fun`) <- function() {
+test(`test_fun`) <- function() {
   context("test_fun")
 
   test_that("correct execution", {
     f <- function(x) x^2
 
-    .test(f) <- function() {
+    test(f) <- function() {
       context("f")
       test_that("correct result for complex number", {
         expect_equal(f(1i), -1 + 0i)

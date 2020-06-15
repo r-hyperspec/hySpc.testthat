@@ -10,20 +10,20 @@
 ##' @examples
 ##' f <- function(x) x^2
 ##'
-##' .test(f) <- function() {
+##' test(f) <- function() {
 ##'    context("f")
 ##'
 ##'    test_that("correct result for complex number", {
 ##'      expect_equal(f(1i), -1 + 0i)
 ##'    })
 ##' }
-`.test<-` <- function(f, value) {
+`test<-` <- function(f, value) {
   attr(f, "test") <- value
   f
 }
 
-.test(`.test<-`) <- function() {
-  context(".test<-")
+test(`test<-`) <- function() {
+  context("test<-")
 
   test_that("correct attribute is set", {
     f <- function(x) x^2
@@ -31,8 +31,11 @@
       "test"
     }
 
-    .test(f) <- test
+    test(f) <- test
 
     expect_equal(attr(f, "test"), test)
   })
 }
+
+##' @rdname test-set
+`.test<-` <- `test<-`

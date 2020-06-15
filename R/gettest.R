@@ -12,7 +12,7 @@
 ##'
 ##' f <- function(x) x^2
 ##'
-##' .test(f) <- function() {
+##' test(f) <- function() {
 ##'    context("f")
 ##'
 ##'    test_that("correct result for complex number", {
@@ -31,7 +31,7 @@ get_test <- function(object) {
   attr(object, "test")
 }
 
-.test(`get_test`) <- function() {
+test(`get_test`) <- function() {
   context("get_test")
 
   test_that("correct attribute is returned", {
@@ -39,7 +39,7 @@ get_test <- function(object) {
     test <- function() {
       "test"
     }
-    .test(f) <- test
+    test(f) <- test
 
     expect_equal(get_test(f), test)
   })
