@@ -36,6 +36,3 @@ test(`test<-`) <- function() {
     expect_equal(attr(f, "test"), test)
   })
 }
-
-##' @rdname test-set
-`.test<-` <- `test<-`
