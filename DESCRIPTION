@@ -16,4 +16,6 @@ Depends:
 RoxygenNote: 7.1.0
 Roxygen: list(markdown = TRUE)
 Collate: 
+    'test.R'
+    'gettest.R'
     'unittest.R'
