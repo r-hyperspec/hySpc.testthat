@@ -11,15 +11,15 @@
 ##' @examples
 ##'
 ##' f <- function(x) x^2
-##' 
+##'
 ##' .test(f) <- function() {
 ##'    context("f")
-##'    
+##'
 ##'    test_that("correct result for complex number", {
 ##'      expect_equal(f(1i), -1 + 0i)
 ##'    })
 ##' }
-##' 
+##'
 ##' get_test(f)
 ##'
 ##' library(testthat)
@@ -27,19 +27,20 @@
 ##' get_test(f)()
 ##'
 ##' with_reporter("summary", get_test(f)())
-##' 
-get_test <- function(object){
+get_test <- function(object) {
   attr(object, "test")
 }
 
-.test(`get_test`) <- function(){
+.test(`get_test`) <- function() {
   context("get_test")
-  
+
   test_that("correct attribute is returned", {
     f <- function(x) x^2
-    test <- function() {"test"}
+    test <- function() {
+      "test"
+    }
     .test(f) <- test
-    
+
     expect_equal(get_test(f), test)
   })
 }
