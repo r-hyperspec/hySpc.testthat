@@ -14,7 +14,7 @@ r:
   
 jobs:
   exclude:
-  - ox: osx
+  - os: osx
     r: devel
 
 before-script:
