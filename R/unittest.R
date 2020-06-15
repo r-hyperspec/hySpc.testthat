@@ -14,14 +14,11 @@
 ##' @author Claudia Beleites
 ##'
 ##' @keywords programming utilities
-##' @importFrom  testthat SummaryReporter
-##' @importFrom  testthat MinimalReporter
-##' @importFrom  testthat ListReporter
-##' @importFrom  testthat MultiReporter
 ##' @importFrom  testthat with_reporter
-##' @importFrom  testthat get_reporter
 ##' @export
-unittest <- function(ns, standalone = TRUE, reporter = SummaryReporter){
+##' @examples
+##' unittest("hySpc.testthat")
+unittest <- function(ns, standalone = TRUE, reporter = "progress"){
   if (!requireNamespace("testthat", quietly = TRUE)) {
     warning("Package testthat required to run the unit tests.")
     return(NA)
@@ -36,44 +33,34 @@ unittest <- function(ns, standalone = TRUE, reporter = SummaryReporter){
   tests <- tests[!sapply(tests, is.null)]
   
   if (standalone) {
-    ## Fire up reporters to get the test results displayed
-    
-    reporter <- reporter$new()
-    lister <- ListReporter$new()
-    reporter <- MultiReporter$new(reporters = list(reporter, lister))
-    
-    with_reporter(reporter = reporter, start_end_reporter = TRUE, {
-      for (t in seq_along(tests)) {
-        reporter$start_file(names(tests[t]))
-        lister$start_file(names(tests[t]))
-        tests[[t]]()
-        reporter$.end_context()
-        reporter$end_file()
-      }
-    })
-    invisible(lister$get_results())
-
+    with_reporter(reporter = reporter, start_end_reporter = TRUE, 
+                  for (t in tests) t())
   } else {
-    ## tests are run within existing test framework/reporters
-    ## this is what devtools::test() uses
-    
-    for (t in seq_along(tests)) {
-      tests[[t]]()
-    }
-    
+    for (t in tests) t()
   }
+  
 }
 
 .test(unittest) <- function(){
-  context ("unittest")
+  context("unittest")
   
   test_that("standalone", {
     
-    test_env <- environment()
-    test_env$f <- get.test
+    f <- function(x) x^2
     
-    result <- unittest(ns = test_env, reporter = MinimalReporter)
-    expect_equal(result[[1]]$file, "f")
-    expect_equal(result[[1]]$context, "get.test")
+    .test(f) <- function() {
+      context("f")
+      test_that("correct result for complex number", {
+        expect_equal(f(1i), -1 + 0i)
+      })
+    }
+    
+    test_env <- environment()
+    test_env$f <- f
+    
+    res <- unittest(ns = test_env, reporter = "list")$get_results()
+    
+    expect_equal(res[[1]]$context, "f")
+    expect_true("expectation_success" %in% class(res[[1]]$results[[1]]))
   })
 }
