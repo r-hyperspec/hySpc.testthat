@@ -23,7 +23,7 @@
 ##' test_fun(f)
 ##' 
 test_fun <- function(object, reporter = "minimal"){
-  test <- get.test(object)
+  test <- get_test(object)
   with_reporter(reporter = reporter, test())
 }
 

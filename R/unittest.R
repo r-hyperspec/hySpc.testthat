@@ -29,7 +29,7 @@ unittest <- function(ns, standalone = TRUE, reporter = "progress"){
   if (is.character(ns))
     ns <- getNamespace(ns)
   
-  tests <- eapply(env = ns, FUN = get.test, all.names = TRUE)
+  tests <- eapply(env = ns, FUN = get_test, all.names = TRUE)
   tests <- tests[!sapply(tests, is.null)]
   
   if (standalone) {

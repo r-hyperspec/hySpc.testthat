@@ -20,26 +20,26 @@
 ##'    })
 ##' }
 ##' 
-##' get.test(f)
+##' get_test(f)
 ##'
 ##' library(testthat)
 ##' ## execute the test
-##' get.test(f)()
+##' get_test(f)()
 ##'
-##' with_reporter("summary", get.test(f)())
+##' with_reporter("summary", get_test(f)())
 ##' 
-get.test <- function(object){
+get_test <- function(object){
   attr(object, "test")
 }
 
-.test(`get.test`) <- function(){
-  context("get.test")
+.test(`get_test`) <- function(){
+  context("get_test")
   
   test_that("correct attribute is returned", {
     f <- function(x) x^2
     test <- function() {"test"}
     .test(f) <- test
     
-    expect_equal(get.test(f), test)
+    expect_equal(get_test(f), test)
   })
 }
