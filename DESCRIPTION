@@ -18,4 +18,5 @@ Roxygen: list(markdown = TRUE)
 Collate: 
     'test.R'
     'gettest.R'
+    'test-fun.R'
     'unittest.R'
