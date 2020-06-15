@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Run test attached to function — test_fun • hySpc.testthat</title>
+<title>Attach unit tests to objects — test&lt;- • hySpc.testthat</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Run test attached to function — test_fun" />
-<meta property="og:description" content="Execute test attached to a function with testthat::Reporter." />
+<meta property="og:title" content="Attach unit tests to objects — test&lt;-" />
+<meta property="og:description" content="This function attaches unit tests in value to an object (typically a
+function) as an attribute &quot;test&quot;." />
 
 
 
@@ -103,37 +104,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Run test attached to function</h1>
+    <h1>Attach unit tests to objects</h1>
     
-    <div class="hidden name"><code>test_fun.Rd</code></div>
+    <div class="hidden name"><code>test-set.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Execute test attached to a function with <a href='https://testthat.r-lib.org/reference/Reporter.html'>testthat::Reporter</a>.</p>
+    <p>This function attaches unit tests in <code>value</code> to an object (typically a
+function) as an attribute <code>"test"</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>test_fun</span>(<span class='no'>object</span>, <span class='kw'>reporter</span> <span class='kw'>=</span> <span class='st'>"minimal"</span>)</pre>
+    <pre class="usage"><span class='fu'>test</span>(<span class='no'>f</span>) <span class='kw'>&lt;-</span> <span class='no'>value</span>
+
+<span class='fu'>.test</span>(<span class='no'>f</span>) <span class='kw'>&lt;-</span> <span class='no'>value</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>to which the test is attached</p></td>
+      <th>f</th>
+      <td><p>the function (object) to which the tests are to be attached</p></td>
     </tr>
     <tr>
-      <th>reporter</th>
-      <td><p><a href='https://testthat.r-lib.org/reference/Reporter.html'>testthat::Reporter</a> to use</p></td>
+      <th>value</th>
+      <td><p>the test code, a function with no parameters</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>the test (function)</p>
+    <p><code>f</code> with the test attached as attribute <code>"test"</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) <span class='no'>x</span>^<span class='fl'>2</span>
+    <pre class="examples"><div class='input'><span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) <span class='no'>x</span>^<span class='fl'>2</span>
 
 <span class='fu'>test</span>(<span class='no'>f</span>) <span class='kw'>&lt;-</span> <span class='kw'>function</span>() {
    <span class='fu'>context</span>(<span class='st'>"f"</span>)
@@ -141,9 +144,7 @@
    <span class='fu'>test_that</span>(<span class='st'>"correct result for complex number"</span>, {
      <span class='fu'>expect_equal</span>(<span class='fu'>f</span>(<span class='fl'>1i</span>), -<span class='fl'>1</span> + <span class='fl'>0i</span>)
    })
-}
-
-<span class='fu'>test_fun</span>(<span class='no'>f</span>)</div><div class='output co'>#&gt; <span style='color: #00BB00;'>.</span><span></div></span></pre>
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
