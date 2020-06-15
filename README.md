@@ -31,6 +31,6 @@ to keep test code and functional code close to each other.
 
 Functions `test_fun()` and `unittest()` execute unit tests that are thus attached to functions.
 
-See [tests/testthat/testthat.R](https://github.com/r-hyperspec/hySpc.testthat/blob/master/tests/testthat/test_attached.R) for including these tests into the usual test suit executed by `devtools::test()`.
+See [tests/testthat/test_attached.R](https://github.com/r-hyperspec/hySpc.testthat/blob/master/tests/testthat/test_attached.R) for including these tests into the usual test suit executed by `devtools::test()`.
 
 
