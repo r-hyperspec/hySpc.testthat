@@ -24,7 +24,6 @@ environment:
 
 build_script:
   - travis-tool.sh install_deps
-  - travis-tool.sh install_r roxygen2
 
 test_script:
   - Rscript -e 'devtools::document(".")'
