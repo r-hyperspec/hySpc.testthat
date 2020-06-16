@@ -1,8 +1,10 @@
-# hySpc.testthat 0.1.0
+# hySpc.testthat
 
 ## Acknowledgements
 The `hyperSpec` team gratefully acknowledges support from the Google Summer of Code program, which sponsored student Erick Oduniyi during summer 2020.
 Erick and the team carried out a significant overhaul of `hyperSpec` which led to this release.
+
+# version 0.2.1
 
 ## User-visible Changes
 
