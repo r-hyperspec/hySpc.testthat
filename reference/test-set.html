@@ -73,7 +73,7 @@ function) as an attribute &quot;test&quot;." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hySpc.testthat</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -87,6 +87,9 @@ function) as an attribute &quot;test&quot;." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -114,7 +117,7 @@ function) as an attribute &quot;test&quot;." />
 function) as an attribute <code>"test"</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>test</span>(<span class='no'>f</span>) <span class='kw'>&lt;-</span> <span class='no'>value</span></pre>
+    <pre class="usage"><span class='fu'>test</span>(<span class='kw'>f</span>) <span class='op'>&lt;-</span> <span class='kw'>value</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,13 +137,13 @@ function) as an attribute <code>"test"</code>.</p>
     <p><code>f</code> with the test attached as attribute <code>"test"</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) <span class='no'>x</span>^<span class='fl'>2</span>
+    <pre class="examples"><div class='input'><span class='kw'>f</span> <span class='op'>&lt;-</span> <span class='fu'>function</span>(<span class='kw'>x</span>) <span class='kw'>x</span><span class='op'>^</span><span class='fl'>2</span>
 
-<span class='fu'>test</span>(<span class='no'>f</span>) <span class='kw'>&lt;-</span> <span class='kw'>function</span>() {
-   <span class='fu'>context</span>(<span class='st'>"f"</span>)
+<span class='fu'>test</span>(<span class='kw'>f</span>) <span class='op'>&lt;-</span> <span class='fu'>function</span>() {
+   <span class='fu'><a href='https://testthat.r-lib.org/reference/context.html'>context</a></span>(<span class='st'>"f"</span>)
 
-   <span class='fu'>test_that</span>(<span class='st'>"correct result for complex number"</span>, {
-     <span class='fu'>expect_equal</span>(<span class='fu'>f</span>(<span class='fl'>1i</span>), -<span class='fl'>1</span> + <span class='fl'>0i</span>)
+   <span class='fu'><a href='https://testthat.r-lib.org/reference/test_that.html'>test_that</a></span>(<span class='st'>"correct result for complex number"</span>, {
+     <span class='fu'><a href='https://testthat.r-lib.org/reference/equality-expectations.html'>expect_equal</a></span>(<span class='fu'>f</span>(<span class='fl'>1i</span>), <span class='op'>-</span><span class='fl'>1</span> <span class='op'>+</span> <span class='fl'>0i</span>)
    })
 }</div></pre>
   </div>

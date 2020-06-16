@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hySpc.testthat</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -86,6 +86,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -112,7 +115,7 @@
     <p>Execute test attached to a function with <a href='https://testthat.r-lib.org/reference/Reporter.html'>testthat::Reporter</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>test_fun</span>(<span class='no'>object</span>, <span class='kw'>reporter</span> <span class='kw'>=</span> <span class='st'>"minimal"</span>)</pre>
+    <pre class="usage"><span class='fu'>test_fun</span>(<span class='kw'>object</span>, reporter = <span class='st'>"minimal"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,17 +136,17 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) <span class='no'>x</span>^<span class='fl'>2</span>
+<span class='kw'>f</span> <span class='op'>&lt;-</span> <span class='fu'>function</span>(<span class='kw'>x</span>) <span class='kw'>x</span><span class='op'>^</span><span class='fl'>2</span>
 
-<span class='fu'>test</span>(<span class='no'>f</span>) <span class='kw'>&lt;-</span> <span class='kw'>function</span>() {
-   <span class='fu'>context</span>(<span class='st'>"f"</span>)
+<span class='fu'>test</span>(<span class='kw'>f</span>) <span class='op'>&lt;-</span> <span class='fu'>function</span>() {
+   <span class='fu'><a href='https://testthat.r-lib.org/reference/context.html'>context</a></span>(<span class='st'>"f"</span>)
 
-   <span class='fu'>test_that</span>(<span class='st'>"correct result for complex number"</span>, {
-     <span class='fu'>expect_equal</span>(<span class='fu'>f</span>(<span class='fl'>1i</span>), -<span class='fl'>1</span> + <span class='fl'>0i</span>)
+   <span class='fu'><a href='https://testthat.r-lib.org/reference/test_that.html'>test_that</a></span>(<span class='st'>"correct result for complex number"</span>, {
+     <span class='fu'><a href='https://testthat.r-lib.org/reference/equality-expectations.html'>expect_equal</a></span>(<span class='fu'>f</span>(<span class='fl'>1i</span>), <span class='op'>-</span><span class='fl'>1</span> <span class='op'>+</span> <span class='fl'>0i</span>)
    })
 }
 
-<span class='fu'>test_fun</span>(<span class='no'>f</span>)</div><div class='output co'>#&gt; <span style='color: #00BB00;'>.</span><span></div></span></pre>
+<span class='fu'>test_fun</span>(<span class='kw'>f</span>)</div><div class='output co'>#&gt; <span style='color: #00BB00;'>.</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

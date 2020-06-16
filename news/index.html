@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Run unit tests — unittest • hySpc.testthat</title>
+<title>Changelog • hySpc.testthat</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,7 @@
 
 
 
-<meta property="og:title" content="Run unit tests — unittest" />
-<meta property="og:description" content="If testthat::testthat-package is available, run the unit tests and display
-the results." />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -60,7 +58,7 @@ the results." />
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -107,60 +105,39 @@ the results." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Run unit tests</h1>
-    
-    <div class="hidden name"><code>unittests.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      
     </div>
 
-    <div class="ref-description">
-    <p>If <a href='https://testthat.r-lib.org/reference/testthat-package.html'>testthat::testthat-package</a> is available, run the unit tests and display
-the results.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>unittest</span>(<span class='kw'>ns</span>, standalone = <span class='fl'>TRUE</span>, reporter = <span class='st'>"progress"</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>ns</th>
-      <td><p>namespace (package) to test</p></td>
-    </tr>
-    <tr>
-      <th>standalone</th>
-      <td><p>if <code>TRUE</code>, appropriate <a href='https://testthat.r-lib.org/reference/Reporter.html'>testthat::Reporter</a>s are used, if
-<code>FALSE</code> the exectution assumes reporters are started already.</p></td>
-    </tr>
-    <tr>
-      <th>reporter</th>
-      <td><p><a href='https://testthat.r-lib.org/reference/Reporter.html'>testthat::Reporter</a> to be used.</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Invisibly returns a data.frame with the test results</p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>Claudia Beleites</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>unittest</span>(<span class='st'>"hySpc.testthat"</span>)</div><div class='output co'>#&gt; ✔ |  OK <span style='color: #BB0000;'>F</span><span> </span><span style='color: #BB00BB;'>W</span><span> </span><span style='color: #0000BB;'>S</span><span> | Context
-#&gt; ⠏ |   0       | get_test</span><span style='color: #00BB00;'>✔</span><span> |   1       | get_test
-#&gt; ⠏ |   0       | test_fun</span><span style='color: #00BB00;'>✔</span><span> |   2       | test_fun
-#&gt; ⠏ |   0       | test&lt;-</span><span style='color: #00BB00;'>✔</span><span> |   1       | test&lt;-
-#&gt; ⠏ |   0       | unittest
-#&gt; ══ </span><span style='font-weight: bold;'>Results</span><span> ═════════════════════════════════════════════════════════════════════
-#&gt; OK:       </span><span style='color: #00BB00;'>6</span><span>
-#&gt; Failed:   </span><span style='color: #00BB00;'>0</span><span>
-#&gt; Warnings: </span><span style='color: #00BB00;'>0</span><span>
-#&gt; Skipped:  </span><span style='color: #00BB00;'>0</span><span></div></span></pre>
+    <div id="hyspctestthat-010" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0">
+<a href="#hyspctestthat-010" class="anchor"></a>hySpc.testthat 0.1.0</h1>
+<div id="acknowledgements" class="section level2">
+<h2 class="hasAnchor">
+<a href="#acknowledgements" class="anchor"></a>Acknowledgements</h2>
+<p>The <code>hyperSpec</code> team gratefully acknowledges support from the Google Summer of Code program, which sponsored student Erick Oduniyi during summer 2020. Erick and the team carried out a significant overhaul of <code>hyperSpec</code> which led to this release.</p>
+</div>
+<div id="user-visible-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#user-visible-changes" class="anchor"></a>User-visible Changes</h2>
+<ul>
+<li>function <code>test&lt;-()</code> assigns unit test code to objects (functions) as attribute <code>"test"</code>
+</li>
+<li>function <code>get_test()</code> retrieves <code>"test"</code> attribute</li>
+<li>function <code>test_fun()</code> retrieves <code>"test"</code> attribute and executes unit test</li>
+<li>function <code>unittest()</code> retrieves all <code>"test"</code> attributes and executes these unit tests</li>
+<li>for example code to run <code>unittest()</code> by <code><a href="https://devtools.r-lib.org//reference/test.html">devtools::test()</a></code> &amp; Co., see the <code>tests/</code> and <code>tests/testthat/</code> directories.</li>
+</ul>
+</div>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 

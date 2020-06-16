@@ -74,7 +74,7 @@ reporter, the test runs silently if successful and stops if it fails." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hySpc.testthat</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -88,6 +88,9 @@ reporter, the test runs silently if successful and stops if it fails." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -116,7 +119,7 @@ reporter, the test runs silently if successful and stops if it fails." />
 reporter, the test runs silently if successful and stops if it fails.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_test</span>(<span class='no'>object</span>)</pre>
+    <pre class="usage"><span class='fu'>get_test</span>(<span class='kw'>object</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,29 +136,29 @@ reporter, the test runs silently if successful and stops if it fails.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) <span class='no'>x</span>^<span class='fl'>2</span>
+<span class='kw'>f</span> <span class='op'>&lt;-</span> <span class='fu'>function</span>(<span class='kw'>x</span>) <span class='kw'>x</span><span class='op'>^</span><span class='fl'>2</span>
 
-<span class='fu'>test</span>(<span class='no'>f</span>) <span class='kw'>&lt;-</span> <span class='kw'>function</span>() {
+<span class='fu'>test</span>(<span class='kw'>f</span>) <span class='op'>&lt;-</span> <span class='fu'>function</span>() {
    <span class='fu'>context</span>(<span class='st'>"f"</span>)
 
    <span class='fu'>test_that</span>(<span class='st'>"correct result for complex number"</span>, {
-     <span class='fu'>expect_equal</span>(<span class='fu'>f</span>(<span class='fl'>1i</span>), -<span class='fl'>1</span> + <span class='fl'>0i</span>)
+     <span class='fu'>expect_equal</span>(<span class='fu'>f</span>(<span class='fl'>1i</span>), <span class='op'>-</span><span class='fl'>1</span> <span class='op'>+</span> <span class='fl'>0i</span>)
    })
 }
 
-<span class='fu'>get_test</span>(<span class='no'>f</span>)</div><div class='output co'>#&gt; function() {
+<span class='fu'>get_test</span>(<span class='kw'>f</span>)</div><div class='output co'>#&gt; function() {
 #&gt;    context("f")
 #&gt; 
 #&gt;    test_that("correct result for complex number", {
 #&gt;      expect_equal(f(1i), -1 + 0i)
 #&gt;    })
 #&gt; }
-#&gt; &lt;environment: 0x7fdd363ec4f8&gt;</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>testthat</span>)
+#&gt; &lt;environment: 0x7fc0667de5b8&gt;</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='http://testthat.r-lib.org'>testthat</a></span>)
 <span class='co'>## execute the test</span>
-<span class='fu'>get_test</span>(<span class='no'>f</span>)()
+<span class='fu'>get_test</span>(<span class='kw'>f</span>)()
 
-<span class='fu'><a href='https://testthat.r-lib.org/reference/reporter-accessors.html'>with_reporter</a></span>(<span class='st'>"summary"</span>, <span class='fu'>get_test</span>(<span class='no'>f</span>)())</div><div class='output co'>#&gt; f: <span style='color: #00BB00;'>.</span><span>
+<span class='fu'><a href='https://testthat.r-lib.org/reference/reporter-accessors.html'>with_reporter</a></span>(<span class='st'>"summary"</span>, <span class='fu'>get_test</span>(<span class='kw'>f</span>)())</div><div class='output co'>#&gt; f: <span style='color: #00BB00;'>.</span><span>
 #&gt; ══ DONE ════════════════════════════════════════════════════════════════════════
 #&gt; </span><span style='color: #00BB00;'>Woot!</span><span></div></span></pre>
   </div>
