@@ -12,6 +12,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
+Additional_repositories: 
+    https://r-hyperspec.github.io/hySpc.pkgs/
 Depends: 
     testthat
 RoxygenNote: 7.1.0
