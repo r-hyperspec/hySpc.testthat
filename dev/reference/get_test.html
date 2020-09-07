@@ -165,19 +165,21 @@ reporter, the test runs silently if successful and stops if it fails.</p>
    })
 }
 
-<span class='fu'>get_test</span>(<span class='kw'>f</span>)</div><div class='output co'>#&gt; function() {
+<span class='fu'>get_test</span>(<span class='kw'>f</span>)
+</div><div class='output co'>#&gt; function() {
 #&gt;    context("f")
 #&gt; 
 #&gt;    test_that("correct result for complex number", {
 #&gt;      expect_equal(f(1i), -1 + 0i)
 #&gt;    })
 #&gt; }
-#&gt; &lt;environment: 0x7fb6d82e25a8&gt;</div><div class='input'>
+#&gt; &lt;environment: 0x7faa32c30a68&gt;</div><div class='input'>
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='http://testthat.r-lib.org'>testthat</a></span>)
 <span class='co'>## execute the test</span>
 <span class='fu'>get_test</span>(<span class='kw'>f</span>)()
 
-<span class='fu'><a href='https://testthat.r-lib.org/reference/reporter-accessors.html'>with_reporter</a></span>(<span class='st'>"summary"</span>, <span class='fu'>get_test</span>(<span class='kw'>f</span>)())</div><div class='output co'>#&gt; f: <span style='color: #00BB00;'>.</span><span>
+<span class='fu'><a href='https://testthat.r-lib.org/reference/reporter-accessors.html'>with_reporter</a></span>(<span class='st'>"summary"</span>, <span class='fu'>get_test</span>(<span class='kw'>f</span>)())
+</div><div class='output co'>#&gt; f: <span style='color: #00BB00;'>.</span><span>
 #&gt; ══ DONE ════════════════════════════════════════════════════════════════════════
 #&gt; </span><span style='color: #00BB00;'>Woot!</span><span></div></span></pre>
   </div>
@@ -195,7 +197,7 @@ reporter, the test runs silently if successful and stops if it fails.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.9000.</p>
 </div>
 
       </footer>
