@@ -13,7 +13,7 @@ Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 Additional_repositories: 
-    https://r-hyperspec.github.io/hySpc.pkgs/
+    https://r-hyperspec.github.io/pkg-repo/
 Depends: 
     testthat
 RoxygenNote: 7.1.0
