@@ -15,11 +15,14 @@ LazyData: yes
 Additional_repositories: 
     https://r-hyperspec.github.io/pkg-repo/
 Depends: 
-    testthat
-RoxygenNote: 7.1.0
+    devtools,
+    testthat,
+    utils
+RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 Collate: 
     'test.R'
+    'get_package_env.R'
     'gettest.R'
     'test-fun.R'
     'unittest.R'

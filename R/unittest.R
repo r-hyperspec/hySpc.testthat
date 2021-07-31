@@ -15,6 +15,7 @@
 ##'
 ##' @keywords programming utilities
 ##' @importFrom  testthat with_reporter
+##' @importFrom devtools dev_packages
 ##' @include gettest.R
 ##' @export
 ##' @examples
@@ -27,10 +28,7 @@ unittest <- function(ns, standalone = TRUE, reporter = "progress") {
   if (!"package:testthat" %in% search())
     attachNamespace("testthat")
 
-  if (is.character(ns))
-    ns <- getNamespace(ns)
-
-  tests <- eapply(env = ns, FUN = get_test, all.names = TRUE)
+  tests <- eapply(env = get_package_env(ns), FUN = get_test, all.names = TRUE)
   tests <- tests[!sapply(tests, is.null)]
 
   if (standalone) {
