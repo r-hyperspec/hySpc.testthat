@@ -37,13 +37,13 @@ hySpc.testthat::test(f) <- function() {
 f
 ```
 ```
-function(x) 2*x
-attr(,"test")
-function() {
-  context("testing f")
-  
-  test_that("foo", expect (bar))
-}
+## function(x) 2*x
+## attr(,"test")
+## function() {
+##   context("testing f")
+##   
+##   test_that("foo", expect (bar))
+## }
 ```
 
 
