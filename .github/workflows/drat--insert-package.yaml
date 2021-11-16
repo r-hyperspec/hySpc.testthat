@@ -31,7 +31,7 @@ jobs:
   drat:
     runs-on: ${{ matrix.config.os }}
 
-    name: ${{ matrix.config.os }} (R-${{ matrix.config.r }})
+    name: "drat: ${{ matrix.config.os }} (R-${{ matrix.config.r }})"
 
     strategy:
       fail-fast: false
@@ -107,6 +107,7 @@ jobs:
         run: |
           git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
 
+          # CUST update the name of the local repo "bot"
           git config --global user.email "${REPO}_Deploy_Bot@example.com"
           git config --global user.name "${REPO} Deploy Bot"
 
@@ -142,5 +143,5 @@ jobs:
           # .tar.gz files are globally blocked (git ignored) by git,
           # must add manually and force it
           git add -f *.tar.gz
-          git commit -m "Automated deploy from ${REPO}"
+          git commit -m "Automated deploy from ${REPO}" #CUST
           git push origin gh-pages
