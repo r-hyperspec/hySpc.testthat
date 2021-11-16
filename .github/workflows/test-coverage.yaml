@@ -2,12 +2,14 @@ on:
   push:
     branches:
       - release
+      - main
       - master
       - develop
 
   pull_request:
     branches:
       - release
+      - main
       - master
       - develop
 
