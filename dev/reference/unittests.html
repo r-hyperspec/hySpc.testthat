@@ -24,7 +24,7 @@ the results."><meta name="robots" content="noindex"><!-- mathjax --><script src=
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-book"></span>
      
      
@@ -64,22 +64,29 @@ the results.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">unittest</span><span class="op">(</span><span class="va">ns</span>, standalone <span class="op">=</span> <span class="cn">TRUE</span>, reporter <span class="op">=</span> <span class="st">"progress"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">unittest</span><span class="op">(</span><span class="va">ns</span>, standalone <span class="op">=</span> <span class="cn">TRUE</span>, reporter <span class="op">=</span> <span class="st">"progress"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>ns</dt>
 <dd><p>namespace (package) to test</p></dd>
+
+
 <dt>standalone</dt>
 <dd><p>if <code>TRUE</code>, appropriate <a href="https://testthat.r-lib.org/reference/Reporter.html" class="external-link">testthat::Reporter</a>s are used, if
 <code>FALSE</code> the exectution assumes reporters are started already.</p></dd>
+
+
 <dt>reporter</dt>
 <dd><p><a href="https://testthat.r-lib.org/reference/Reporter.html" class="external-link">testthat::Reporter</a> to be used.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Invisibly returns a data.frame with the test results</p>
+    
+
+<p>Invisibly returns a data.frame with the test results</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -88,14 +95,21 @@ the results.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">unittest</span><span class="op">(</span><span class="st">"hySpc.testthat"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">unittest</span><span class="op">(</span><span class="st">"hySpc.testthat"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> | <span style="color: #FFAF00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | get_test                                                        <span style="color: #00BB00;">✔</span> |         1 | get_test</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | test_fun                                                        <span style="color: #00BB00;">✔</span> |         2 | test_fun</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | test&lt;-                                                          <span style="color: #00BB00;">✔</span> |         1 | test&lt;-</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | unittest                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | get_test                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> |         1 | get_test</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | test_fun                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> |         2 | test_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | test&lt;-                                                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> |         1 | test&lt;-</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ⠏ |         0 | unittest                                                        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">Duration: 0.3 s</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">Duration: 0.2 s</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [ FAIL 0 | WARN 0 | SKIP 0 | <span style="color: #00BB00;">PASS</span> 6 ]</span>
 </code></pre></div>
@@ -112,7 +126,7 @@ the results.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
