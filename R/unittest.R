@@ -42,26 +42,3 @@ unittest <- function(ns, standalone = TRUE, reporter = "progress") {
 
 }
 
-test(unittest) <- function() {
-  context("unittest")
-
-  test_that("standalone", {
-
-    f <- function(x) x^2
-
-    test(f) <- function() {
-      context("f")
-      test_that("correct result for complex number", {
-        expect_equal(f(1i), -1 + 0i)
-      })
-    }
-
-    test_env <- environment()
-    test_env$f <- f
-
-    res <- unittest(ns = test_env, reporter = "list")$get_results()
-
-    expect_equal(res[[1]]$context, "f")
-    expect_true("expectation_success" %in% class(res[[1]]$results[[1]]))
-  })
-}

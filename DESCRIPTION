@@ -1,22 +1,19 @@
 Package: hySpc.testthat
 Type: Package
-Title: Unit Test Add-Ons for 'testthat'
-Version: 0.2.1.9000
+Title: Unit Test Add-on for 'testthat'
+Version: 0.2.2
 Maintainer: Claudia Beleites <Claudia.Beleites@chemometrix.gmbh>
 Authors@R: c(
     person("Claudia",   "Beleites",  role = c("aut","cre"), email = "Claudia.Beleites@chemometrix.gmbh"),
     person("Erick",     "Oduniyi",   role = "aut",          email = "eeoduniyi@gmail.com"))
-Description: Enhance package testthat by allowing tests to be attached to the function/object they test. 
+Description: Enhance package 'testthat' by allowing tests to be attached to the function/object they test. 
     This allows to keep functional and unit test code together.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
-LazyData: yes
-Additional_repositories: 
-    https://r-hyperspec.github.io/pkg-repo/
 Depends: 
     testthat
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 Collate: 
     'test.R'
